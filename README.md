@@ -33,12 +33,12 @@ Brace yourselves, tech nerds! We've got:
 
 1. Clone this bad boy:
    ```
-   git clone https://github.com/your-username/jobconnect.git
+   git clone https://github.com/your-username/jobportal.git
    ```
 
 2. Install the fun stuff:
    ```
-   cd jobconnect
+   cd jobportal
    npm install
    ```
 
@@ -51,21 +51,13 @@ Brace yourselves, tech nerds! We've got:
 
 ## 🎨 Wanna Add Your Own Flair?
 
-Got some wild ideas to make JobConnect even cooler? Awesome! Here's how:
+Got some wild ideas to make JobPortal even cooler? Awesome! Here's how:
 
 1. Fork it (the repo, not your dinner 🍴)
 2. Create a new branch: `git checkout -b feature/CrazyIdea`
 3. Commit your changes: `git commit -m 'Added more cowbell'`
 4. Push it real good: `git push origin feature/CrazyIdea`
 5. Hit us with a Pull Request!
-
-## 🆘 Need a Life Line?
-
-Stuck? Confused? Just wanna chat? We've got your back!
-
-- 📧 Drop us a line at `help@jobconnect.com`
-- 🐦 Tweet us @JobConnectDudes
-- 📱 Slide into our DMs on Insta @JobConnectCrew
 
 ---
 
