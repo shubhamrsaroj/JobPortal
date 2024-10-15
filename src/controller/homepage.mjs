@@ -30,8 +30,8 @@ export default class JobSeeker {
     
     postRegister(req, res) {
         let { companyName, userName, email, password, phone, companyDescription } = req.body;
-        JobRecruiter.add(companyName, userName, email, password, phone, companyDescription);
-        res.render('login', {recruiter: req.session.userEmail });
+        const myjob=JobRecruiter.add(companyName, userName, email, password, phone, companyDescription);
+        res.render('login', {myjob,recruiter: req.session.userEmail });
     }
 
     postLogin(req, res) {
@@ -181,6 +181,23 @@ export default class JobSeeker {
     getMyApplicants(req,res){
         res.redirect('/myjobseeker');
     }
+
+
+    getmysearch(req,res){
+        const search=req.query.search;
+        const mysearch=[];
+        const findit=JobApplication.searchit(search);
+
+        if(findit){
+            mysearch.push(findit);
+            res.render('jobs',{mysearch});
+        }
+
+      
+
+
+    }
    
 
 }
+

@@ -78,7 +78,10 @@ export default class JobApplication {
         }
         return false;
     }
-   
-    
+
+
+    static searchit(jobCategory){
+        return applications.filter((jobs=>jobs.jobCategory.toLowerCase().includes(jobCategory.toLowerCase)));
 }
 
+}

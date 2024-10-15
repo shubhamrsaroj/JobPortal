@@ -50,4 +50,6 @@ app.get('/myjobseeker', myjob.getjobSeekerfile);
 
 app.get('/myjobseeker',myjob.getMyApplicants);
 
+app.get('/search',myjob.getMySearch);
+
 app.listen(4302, () => console.log('Server started on port 4301'));
