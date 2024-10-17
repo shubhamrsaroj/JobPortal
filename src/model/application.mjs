@@ -81,7 +81,7 @@ export default class JobApplication {
 
 
     static searchit(jobCategory){
-        return applications.filter((jobs=>jobs.jobCategory.toLowerCase().includes(jobCategory.toLowerCase)));
+        return applications.filter((jobs=>jobs.jobCategory.toLowerCase().includes(jobCategory.toLowerCase())));
 }
 
 }

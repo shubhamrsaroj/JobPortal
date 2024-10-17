@@ -184,16 +184,15 @@ export default class JobSeeker {
 
 
     getmysearch(req,res){
-        const search=req.query.search;
-        const mysearch=[];
-        const findit=JobApplication.searchit(search);
-
-        if(findit){
-            mysearch.push(findit);
-            res.render('jobs',{mysearch});
+        let search=req.query.search || "";
+        let  mysearch=[];
+        
+        if(search){
+            mysearch=JobApplication.searchit(search);
+ 
         }
 
-      
+        res.render('search',{mysearch});
 
 
     }
