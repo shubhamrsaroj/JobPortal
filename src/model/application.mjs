@@ -80,8 +80,15 @@ export default class JobApplication {
     }
 
 
-    static searchit(jobCategory){
-        return applications.filter((jobs=>jobs.jobCategory.toLowerCase().includes(jobCategory.toLowerCase())));
-}
+    static searchit(jobCategory, jobLocation) {
+        return applications.filter((job) => 
+            (jobCategory && job.jobCategory.toLowerCase().includes(jobCategory.toLowerCase())) ||
+            (jobLocation && job.jobLocation.toLowerCase().includes(jobLocation.toLowerCase()))
+        );
+    }
+
+
+
+
 
 }

@@ -183,20 +183,21 @@ export default class JobSeeker {
     }
 
 
-    getmysearch(req,res){
-        let search=req.query.search || "";
-        let  mysearch=[];
-        
-        if(search){
-            mysearch=JobApplication.searchit(search);
- 
+    getmysearch(req, res) {
+        const search = req.query.search || "";
+        const location = req.query.location || "";
+        let mysearch = [];
+    
+        if (search || location) {
+            mysearch = JobApplication.searchit(search, location);
         }
-
-        res.render('search',{mysearch});
-
-
+    
+        res.render('search', { recruiter: req.session.userEmail,mysearch });
     }
-   
+
+  
+
+    
 
 }
 
