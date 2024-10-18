@@ -50,7 +50,7 @@ app.get('/myjobseeker', myjob.getjobSeekerfile);
 
 app.get('/myjobseeker',myjob.getMyApplicants);
 
-app.get('/search',auth,myjob.getmysearch);
+app.get('/search',auth,myjob.getMysearch);
 
 
 

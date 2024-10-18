@@ -183,7 +183,7 @@ export default class JobSeeker {
     }
 
 
-    getmysearch(req, res) {
+    getMysearch(req, res) {
         const search = req.query.search || "";
         const location = req.query.location || "";
         let mysearch = [];
