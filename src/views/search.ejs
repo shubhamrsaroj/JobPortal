@@ -167,5 +167,36 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+            
+        const mybutton=document.getElementById("mybutton");
+        const myinput=document.getElementById("mysearch");
+        const myinput2=document.getElementById("mysearch2");       
+        
+        
+        function checkinput(){
+          
+            if(myinput.value.trim()==="" && myinput2.value.trim()===""){
+                mybutton.disabled=true;
+            }
+            else{
+                mybutton.disabled=false;
+            }
+        }
+
+        if(mybutton && myinput && myinput2){
+            myinput.addEventListener("input",checkinput);
+            myinput2.addEventListener("input",checkinput);
+
+            checkinput();
+        }
+
+        
+
+        
+
+     </script>
+
 </body>
 </html>

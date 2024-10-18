@@ -213,16 +213,19 @@
                 </ul>
                 <% if (locals.recruiter) { %>
                 <form class="d-flex" role="search" action="/search" method="get">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search"
+                    <input id="mysearch" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search"
                     >
-                    <input class="form-control me-2" type="search" placeholder="Location" aria-label="Search" name="location"
+                    <input class="form-control me-2" type="search"  id="mysearch2" placeholder="Location" aria-label="Search" name="location"
                     >
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    <button class="btn btn-outline-success"  id="mybutton" type="submit">Search</button>
                     
                 </form>
                 <% } %>
             </div>
         </div>
+       
+
+
     </nav>
 
     <div class="content">
