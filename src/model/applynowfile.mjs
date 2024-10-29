@@ -1,4 +1,8 @@
+import { getdb } from "../config/mongodb.mjs";
+
 let myapplied=[];
+
+
 export default class JobApply{
 
 
@@ -12,7 +16,11 @@ export default class JobApply{
     }
 
 
-    static add(name,email,contact,resume){
+    static async add(name,email,contact,resume){
+
+        const mydb=getdb();
+
+        const collection=mydb.collection("applynowusers");
 
         let jobApply=new JobApply(
             myapplied.length+1,
@@ -21,6 +29,8 @@ export default class JobApply{
 
         myapplied.push(jobApply);
 
+        await collection.insertOne(jobApply);
+    
     }
     
     static gettheid(){

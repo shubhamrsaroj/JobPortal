@@ -162,11 +162,14 @@ export default class JobSeeker {
        
     }
 
-    postApplyNow(req, res) {
+    async postApplyNow(req, res) {
+
+
+
         const { name, email, contact } = req.body;
         const resume = req.file.filename;
 
-        JobApply.add(name, email, contact, resume);
+        await JobApply.add(name, email, contact, resume);
 
         
         res.redirect('/myjobseeker');
