@@ -5,6 +5,7 @@ import path from "path";
 import session from 'express-session';
 import { auth } from './src/middleware/auth.middleware.mjs';
 import { upload } from './src/middleware/fileupload.middleware.mjs';
+import { connectToMongodb } from './src/config/mongodb.mjs';
 
 
 const app = express();
@@ -54,4 +55,7 @@ app.get('/search',auth,myjob.getMysearch);
 
 
 
-app.listen(4302, () => console.log('Server started on port 4301'));
+app.listen(4302,()=>{
+
+    connectToMongodb();
+});

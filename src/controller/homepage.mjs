@@ -28,9 +28,9 @@ export default class JobSeeker {
         });
     }
     
-    postRegister(req, res) {
+    async postRegister(req, res) {
         let { companyName, userName, email, password, phone, companyDescription } = req.body;
-        const myjob=JobRecruiter.add(companyName, userName, email, password, phone, companyDescription);
+        const myjob=await JobRecruiter.add(companyName, userName, email, password, phone, companyDescription);
         res.render('login', {myjob,recruiter: req.session.userEmail });
     }
 
