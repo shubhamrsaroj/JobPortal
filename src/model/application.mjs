@@ -1,4 +1,5 @@
 import { application } from "express";
+import { getdb } from "../config/mongodb.mjs";
 
 let applications=[];
 
@@ -27,7 +28,12 @@ export default class JobApplication {
         this.applyBy = applyBy;
     }
 
-    static add(jobCategory, jobLocation, jobDesignation, companyName, salary, totalPositions, totalOpenings, skills, applyBy) {
+    static async add(jobCategory, jobLocation, jobDesignation, companyName, salary, totalPositions, totalOpenings, skills, applyBy) {
+       
+        const mynewusers=getdb();
+
+        const collection=mynewusers.collection("application");
+        
         const newApplication = new JobApplication(
             applications.length+1,
             jobCategory, 
@@ -40,7 +46,12 @@ export default class JobApplication {
             skills, 
             applyBy
         );
+
+
+
         applications.push(newApplication);
+        
+        await collection.insertOne(newApplication);
         return newApplication;
     }
 

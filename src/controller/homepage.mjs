@@ -53,7 +53,7 @@ export default class JobSeeker {
         res.render('newapplication', { recruiter: req.session.userEmail });
     }
 
-    postapplicationUpdate(req, res) {
+    async postapplicationUpdate(req, res) {
         try {
             const {
                 jobCategory,
@@ -67,7 +67,7 @@ export default class JobSeeker {
                 applyBy
             } = req.body;
     
-            JobApplication.add(
+            await JobApplication.add(
                 jobCategory,
                 jobLocation,
                 jobDesignation,
