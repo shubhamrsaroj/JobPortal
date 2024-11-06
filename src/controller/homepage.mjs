@@ -2,7 +2,11 @@ import JobRecruiter from "../model/recruiter.mjs";
 import JobApplication from "../model/application.mjs";
 import JobApply from "../model/applynowfile.mjs";
 
+
+
 export default class JobSeeker {
+
+
     getHomePage(req, res) {
         res.render('home', { recruiter: req.session.userEmail });
     }
@@ -53,7 +57,7 @@ export default class JobSeeker {
         res.render('newapplication', { recruiter: req.session.userEmail });
     }
 
-    async postapplicationUpdate(req, res) {
+    postapplicationUpdate(req, res) {
         try {
             const {
                 jobCategory,
@@ -67,7 +71,7 @@ export default class JobSeeker {
                 applyBy
             } = req.body;
     
-            await JobApplication.add(
+             JobApplication.add(
                 jobCategory,
                 jobLocation,
                 jobDesignation,

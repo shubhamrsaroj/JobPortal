@@ -1,9 +1,18 @@
 import { application } from "express";
 import { getdb } from "../config/mongodb.mjs";
-
 let applications=[];
 
+
+
+
+
 export default class JobApplication {
+
+
+
+
+
+
     constructor(
         id,
         jobCategory, 

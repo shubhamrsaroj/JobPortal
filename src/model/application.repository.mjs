@@ -1,5 +1,5 @@
 import { getdb } from "../config/mongodb.mjs";
-
+import { ObjectId } from 'mongodb';
 export default class ApplicationRepository {
     constructor() {
         this.collection = "application";
@@ -24,10 +24,39 @@ export default class ApplicationRepository {
                 applyBy
             });
 
+
             return result; // Return the result of the insert operation
         } catch (err) {
             console.error("Error inserting document:", err);
             throw err; // Rethrow the error for further handling
         }
     }
+
+    async getAll() {
+        try {
+          const db = await getdb();
+          const collection = db.collection(this.collection);
+          const applications = await collection.find({}).toArray();
+          return applications;
+        } catch (err) {
+          console.error("Error fetching documents:", err);
+          throw err;
+        }
+      }
+
+      
+     
+
+      async getId(myid) {
+        try {
+          const db = await getdb();
+          const collection = db.collection(this.collection);
+          const applications = await collection.findOne({ _id: new ObjectId(myid) }); // Use ObjectId here
+          return applications;
+        } catch (err) {
+          console.error("Error fetching documents:", err);
+          throw err;
+        }
+      }
+
 }
